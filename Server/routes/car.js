@@ -20,9 +20,11 @@ router.post("/createCar", async (req, res) => {
       carColor
     );
 
-    await User.findByIdAndUpdate(userId, {
-      $push: { cars: newCar._id }
-    });
+    if(newCar){
+      await User.findByIdAndUpdate(userId, {
+        $push: { cars: newCar._id }
+      });
+    }
 
     res.status(200).json(newCar);
   } catch (error) {

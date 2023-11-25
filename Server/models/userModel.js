@@ -32,18 +32,25 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    cars:[
+    cars: [
       {
         type: Schema.Types.ObjectId,
-        required: false
-      }
-    ]
+        ref: "Car",
+        required: false,
+      },
+    ],
+    reservations: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Reservation",
+        required: false,
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
-
 
 //middlewares
 userSchema.statics.signup = async function (
@@ -114,26 +121,26 @@ userSchema.statics.signup = async function (
 
 //static login method
 
-userSchema.statics.login = async function(identifier, password) {
-    if (!identifier || !password) {
-        throw Error('All fields must be filled!');
-    }
+userSchema.statics.login = async function (identifier, password) {
+  if (!identifier || !password) {
+    throw Error("All fields must be filled!");
+  }
 
-    const user = await this.findOne({
-        $or: [{ email: identifier }, { personalID: identifier }]
-    });
+  const user = await this.findOne({
+    $or: [{ email: identifier }, { personalID: identifier }],
+  });
 
-    if (!user) {
-        throw Error('Incorrect email or personal ID');
-    }
+  if (!user) {
+    throw Error("Incorrect email or personal ID");
+  }
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+  const isPasswordValid = await bcrypt.compare(password, user.password);
 
-    if (!isPasswordValid) {
-        throw Error('Incorrect password');
-    }
+  if (!isPasswordValid) {
+    throw Error("Incorrect password");
+  }
 
-    return user;
+  return user;
 };
 
 module.exports = mongoose.model("User", userSchema);

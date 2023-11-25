@@ -19,6 +19,15 @@ app.use("/api/user", userRoutes);
 const carRoutes = require("./routes/car");
 app.use("/api/car", carRoutes);
 
+const reservationRoutes = require("./routes/reservation")
+app.use("/api/reservation", reservationRoutes);
+
+const placeNoRoutes = require("./routes/placeNo")
+app.use("/api/placeNo", placeNoRoutes)
+
+const parkingAreaRoutes = require("./routes/parkingArea")
+app.use("/api/parkingArea", parkingAreaRoutes)
+
 try {
   app.listen(PORT, () => {
     console.log(`Server running on port: http://localhost:${PORT}`);

@@ -1,16 +1,13 @@
 const mongoose = require("mongoose");
 
+const Car = require("./carModel")
 const Schema = mongoose.Schema;
 
 const reservationSchema = new Schema(
   {
-    idUser: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
     idPlaceNo: {
       type: Schema.Types.ObjectId,
+      ref: "PlaceNo",
       required: false,
     },
     idCar: {
@@ -18,14 +15,14 @@ const reservationSchema = new Schema(
       ref: "Car",
       required: false,
     },
-    startDateTime:{
-        type: Date,
-        required: true
+    startDateTime: {
+      type: Date,
+      required: false,
     },
-    endDateTime:{
-        type: Date,
-        required: true
-    }
+    endDateTime: {
+      type: Date,
+      required: false,
+    },
   },
   {
     timestamps: true,
@@ -33,8 +30,35 @@ const reservationSchema = new Schema(
 );
 
 //middlewares
-reservationSchema.statics.createReservation = async function () {
+reservationSchema.statics.createReservation = async function (
+  idPlaceNo,
+  idCar,
+  startDateTime,
+  endDateTime
+) {
+  if (!idPlaceNo || !idCar) {
+    throw Error("All fields must be filled!");
+  }
+
+  const car = await Car.findById(idCar);
+
+  if (!car) {
+    throw Error("Car not found");
+  }
+
+  const plateInUse = await this.findOne({
+    idCar,
+    startDateTime: { $lt: endDateTime },
+    endDateTime: { $gt: startDateTime },
+  });
+
+  if (plateInUse) {
+    throw Error("Car is already reserved during this time");
+  }
+
+  const reservation = this.create(idPlaceNo, idCar, startDateTime, endDateTime);
+
   return reservation;
 };
 
-module.exports = mongoose.model("Car", carSchema);
+module.exports = mongoose.model("Reservation", reservationSchema);
