@@ -1,71 +1,80 @@
+import telekomLogo from "../assets/telekomLogo.png";
+
+
 const Register = () => {
   return(
     <div className="flex flex-col h-screen items-center justify-center bg-magenta">
-			<form className="max-w-4xl w-1/3  p-8 mx-auto bg-white rounded-lg shadow-md">
-			<div className="flex flex-row justify-between">
-					<h1 className="font-bold text-3xl">Login</h1>
+			<form className="grid max-w-4xl w-1/3  p-8 mx-auto bg-white rounded-lg shadow-md">
+				<div className="flex flex-row justify-around mb-8 mt-1 items-center">
+					<h1 className="font-bold text-2xl">Register</h1>
 					<img
 						src={telekomLogo}
 						alt="Telekom Logo"
-						className="w-1/2"
+						className="w-1/4"
 					/>
 				</div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <input
+						placeholder="Firstname"
+            type="text"
+            className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
+          ></input>
           <div className="flex flex-col">
             <input
-							defaultValue="Firstname"
-              id="firstname"
-              className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
+							placeholder="Surname"
+							type="text"
+							className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
             ></input>
           </div>
-          <div className="flex flex-col">
-            <input
-							defaultValue="Surname"
-              id="surname"
-              className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
-            ></input>
-          </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col col-span-2">
 					<input
-						defaultValue="Email"
-						id="email"
-						className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
+						placeholder="Email"
+            type="email"
+            className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 					></input>
 					</div>
-					<div className="flex flex-col">
+					<div className="flex flex-col col-span-2">
 						<input
-							defaultValue="Personal ID"
-							id="personalID"
-							className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
+							placeholder="Personal ID"
+							type="text"
+							className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
+						></input>
+					</div>
+					<div className="flex flex-col col-span-2">
+						<input
+							placeholder="Phone Number"
+							type="number"
+							className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 						></input>
 					</div>
 					<div className="flex flex-col">
 						<input
-							defaultValue="Phone Number"
-							id="phone"
-							className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
+							placeholder="Password"
+							type="password"
+							className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 						></input>
 					</div>
 					<div className="flex flex-col">
 						<input
-							defaultValue="Password"
-							id="password"
-							className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
+							placeholder="Retype Password"
+							type="password"
+							className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 						></input>
-					</div>
-					<div className="flex flex-col">
-						<input
-							defaultValue="Retype Password"
-							id="retypePass"
-							className="border-2 py-1 px-2 w-full  rounded-full bg-gray-300"
-						></input>
-					</div>
-					<div className="flex justify-center items-end ">
-						<button className="py-1 px-8 m-0 border-2 border-magenta rounded-full bg-magenta text-white hover:bg-white hover:text-black hover:font-bold w-full">
-						Register
-						</button>
 					</div>
         </div>
+				<button className="justify-self-center p-1.5 pl-1 mt-6 w-40 border-2 text-sm border-magenta
+						rounded-full bg-magenta text-white hover:bg-white
+						hover:text-black hover:font-bold">
+				Register
+				</button>
+				<div className="mt-6 items-center w-full flex justify-around">
+					<div className="font-bold text-magenta">
+						Already registered?
+					</div>
+						<button className="p-1.5 pl-1 w-20 border-2 text-sm border-magenta
+						rounded-full bg-magenta text-white hover:bg-white
+						hover:text-black hover:font-bold">Login</button>
+				</div>
 			</form>
 		</div>
   )
