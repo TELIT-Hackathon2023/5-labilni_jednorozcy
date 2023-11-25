@@ -27,7 +27,7 @@ export default function Home() {
 						<Link to="/login">
 							<button
 								className="p-4 pl-4 border-2 text-4xl border-magenta
-						rounded-full bg-magenta text-white hover:bg-white
+						rounded-full bg-magenta text-white hover:bg-white duration-300 ease-in-out
 						hover:text-magenta hover:font-bold"
 							>
 								Get started

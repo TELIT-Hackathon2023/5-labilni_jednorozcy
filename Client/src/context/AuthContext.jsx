@@ -10,7 +10,6 @@ export const authReducer = (state, action) => {
       return { user: action.payload };
     case 'LOGOUT':
       return { user: null };
-
     default:
       return state;
   }
@@ -23,12 +22,13 @@ export const AuthContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'))
-
-    if(user){
-      dispatch({type: 'LOGIN', payload: user})
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    
+    // Check if the stored user is valid before dispatching
+    if (storedUser && storedUser.token) {
+      dispatch({ type: 'LOGIN', payload: storedUser });
     }
-  }, [])
+  }, []); // Run only on mount
 
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
