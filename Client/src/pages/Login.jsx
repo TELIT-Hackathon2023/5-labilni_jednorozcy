@@ -37,6 +37,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           type="password"
         ></input>
+		{error && <div className="w-full text-red-600">{error}</div>}
         <button
           onClick={handleSubmit}
           className="p-1 w-20 border-2 border-magenta rounded-full bg-magenta text-white hover:bg-white hover:text-magenta hover:font-bold duration-300 ease-in-out"
