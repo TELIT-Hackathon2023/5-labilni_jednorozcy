@@ -27,13 +27,13 @@ export default function Login() {
 					className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 				></input>
 				<input
-				value={password}
+					value={password}
 					className="w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
 					placeholder="Password"
 					onChange={(e) => setPassword(e.target.value)}
 					type="password"
 				></input>
-				<button className="p-1 w-20 border-2 border-magenta rounded-full bg-magenta text-white hover:bg-white hover:text-black hover:font-bold">
+				<button className="p-1 w-20 border-2 border-magenta rounded-full bg-magenta text-white hover:bg-white hover:text-magenta hover:font-bold duration-300 ease-in-out">
 					Login
 				</button>
 				<div className="w-full flex justify-between">
@@ -44,7 +44,7 @@ export default function Login() {
 						<button
 							className="p-1 pl-1 w-20 border-2 text-sm border-magenta
 						rounded-full bg-magenta text-white hover:bg-white
-						hover:text-black hover:font-bold"
+						hover:text-magenta hover:font-bold"
 						>
 							Register
 						</button>
