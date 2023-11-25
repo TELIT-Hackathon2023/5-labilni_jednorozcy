@@ -15,7 +15,7 @@ export default function Home() {
 					</div>
 
                 <div className="pl-[95px] text-2xl pr-[180px] mt-8 text-justify mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula tincidunt ultrices. Sed ligula elit, tristique ut ligula nec, pulvinar aliquet massa. Donec dictum sodales lacus ac maximus. Maecenas aliquam volutpat tellus sed maximus. Nullam eu consectetur libero, ut tincidunt urna. Pellentesque porttitor turpis pulvinar tempus consequat. Suspendisse potenti. Quisque quis blandit elit. Pellentesque vehicula, massa et
+                Welcome to our Parking Manager! Easily register and streamline your parking experience by adding your license plate details and car count. Navigate the parking lot map, choose your preferred spot, and even filter availability based on your desired reservation time. Admins have access to comprehensive reservation management. Reserve with ease, ensuring a seamless start to your journey, whether it's finding parking or efficiently managing your event logistics.
                 </div>
 
 					<Link
