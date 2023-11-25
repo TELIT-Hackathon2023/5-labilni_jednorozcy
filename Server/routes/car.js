@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Car = require("../models/carModel");
+const requireAuth = require('../middleware/requireAuth')
+
+//middleware
+router.use(requireAuth)
 
 //createCar
 router.post("/createCar", async (req, res) => {
