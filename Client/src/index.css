@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'TELECOM';
+    src: url('assets/TeleNeoMedium.otf');
+}
+
+@layer base {
+  *{
+    @apply font-telecom;
+  }
+}
