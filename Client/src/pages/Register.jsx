@@ -40,7 +40,7 @@ const Register = () => {
 						/>
 					</Link>
 				</div>
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+				<div className="grid gap-6 grid-cols-2">
 					<input
 						placeholder="Firstname"
             type="text"
@@ -91,6 +91,7 @@ const Register = () => {
             onChange={(e) => setReTypePassword(e.target.value)}
           ></input>
         </div>
+				{error && <div className="justify-self-center w-full text-red-600">{error}</div>}
         <button
           onClick={handleSubmit}
           className="justify-self-center p-1.5 pl-1 mt-6 w-40 border-2 text-sm border-magenta
