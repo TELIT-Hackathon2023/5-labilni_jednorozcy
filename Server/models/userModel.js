@@ -31,7 +31,13 @@ const userSchema = new Schema(
     personalID: {
       type: String,
       required: true,
-    }
+    },
+    cars:[
+      {
+        type: Schema.Types.ObjectId,
+        required: false
+      }
+    ]
   },
   {
     timestamps: true,

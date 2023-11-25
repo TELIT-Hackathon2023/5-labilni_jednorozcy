@@ -19,7 +19,7 @@ const carSchema = new Schema(
     licensePlateNo: {
       type: String,
       required: true,
-    },
+    }
   },
   {
     timestamps: true,
