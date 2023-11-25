@@ -8,8 +8,8 @@ export default function Map() {
             
             <div  className="bg-cover w-full h-screen" style={{backgroundImage: `url(${map})`}}>
                 <Link to="/parking_lot"> 
-                    <div  className="absolute bg-red-400 top-0 right-0 text-xl h-10 px-2">TU KLIKAJ !</div>
-                    </Link>
+                    <div  className="absolute hover:bg-blue-400 opaci duration-300 ease-in-out top-[210px] left-[1180px] text-xl h-[90px] w-[115px] px-2 rotate-[-16deg]"></div>
+                </Link>
      
             </div>
         </div>
