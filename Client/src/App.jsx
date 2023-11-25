@@ -37,6 +37,7 @@ function App() {
 				<Route path="/reservations" element={<Reservations/>}/>
 				<Route path="/cars" element={<Cars/>}/>
 				<Route path="/users" element={<Users/>}/>
+				<Route path="/create_reservation" element={<CreateReservation/>}/>
 			</Routes>
 		</BrowserRouter>
 
