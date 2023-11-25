@@ -13,7 +13,7 @@ export default function Home() {
                     <h1>Parking Manager</h1>
                 </div>
 
-                <div className="pl-[95px] text-2xl pr-[180px] mt-[180px] text-justify mb-[50px]">
+                <div className="pl-[95px] text-2xl pr-[180px] mt-8 text-justify mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vehicula tincidunt ultrices. Sed ligula elit, tristique ut ligula nec, pulvinar aliquet massa. Donec dictum sodales lacus ac maximus. Maecenas aliquam volutpat tellus sed maximus. Nullam eu consectetur libero, ut tincidunt urna. Pellentesque porttitor turpis pulvinar tempus consequat. Suspendisse potenti. Quisque quis blandit elit. Pellentesque vehicula, massa et
                 </div>
 
