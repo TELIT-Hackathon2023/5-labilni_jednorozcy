@@ -1,5 +1,6 @@
 import telekomLogo from "../assets/telekomLogo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 	const [firstname, setFirstName] = useState("");
@@ -12,14 +13,16 @@ const Register = () => {
 
   return(
     <div className="flex flex-col h-screen items-center justify-center bg-magenta">
-			<form className="grid max-w-4xl w-1/3  p-8 mx-auto bg-white rounded-lg shadow-md">
+			<form className="grid max-w-4xl w-1/3  p-8 mx-auto bg-white rounded-3x1 shadow-md">
 				<div className="flex flex-row justify-around mb-8 mt-1 items-center">
 					<h1 className="font-bold text-2xl">Register</h1>
-					<img
-						src={telekomLogo}
-						alt="Telekom Logo"
-						className="w-1/4"
-					/>
+					<Link className="w-1/4" to={"/"}>
+						<img
+							src={telekomLogo}
+							alt="Telekom Logo"
+							className=""
+						/>
+					</Link>
 				</div>
 				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
 					<input
