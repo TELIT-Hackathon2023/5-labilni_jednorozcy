@@ -71,7 +71,7 @@ const Register = () => {
           ></input>
           <input
             placeholder="Phone Number"
-            type="number"
+            type="tel"
             className="col-span-2 w-full p-1 pl-3 bg-gray-300 text-gray-600 rounded-full"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
