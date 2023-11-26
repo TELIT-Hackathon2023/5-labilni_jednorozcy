@@ -10,35 +10,29 @@ import ParkingLot from "./pages/Parkinglot.jsx";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Register from "./pages/Register.jsx";
 import Admin from "./pages/Admin.jsx";
-<<<<<<< Updated upstream
-import ProtectedRoute from './components/ProtectedRoute.jsx';
 
+import { useAuthContext } from "./hooks/useAuthContext.js";
 
-=======
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
->>>>>>> Stashed changes
-
-function App() {
-	return (
-		<>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="*" element={<Error />} />
-					<Route path="/register" element={<Register />} />
-
-					<Route path="/map" element={<Map/>} />
-					<Route path="/parking_lot" element={<ParkingLot/>} />
-
-					<Route path="/admin" element={<Admin />} />
-					<Route path="/reservations" element={<Reservations />} />
-					<Route path="/cars" element={<Cars />} />
-					<Route path="/users" element={<Users />} />
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+export default function App() {
+  const { user } = useAuthContext();
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={!user ? <Home /> : <Navigate to="/parking" />} />
+          <Route
+            path="/login"
+            element={user ?  <Navigate to="/parking" />: <Login />}
+          />
+          <Route
+            path="/register"
+            element={user ? <Navigate to="/parking" /> :<Register /> }
+          />
+          <Route path="/parking">
+            <Route index element={user ? <Map/> :<Navigate to="/" />}/>
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App;
